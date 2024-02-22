@@ -1,0 +1,26 @@
+---
+- name: Install and configure HTTPS 
+  hosts: all
+
+  tasks:
+  - name: Install latest version of httpd
+    yum:
+      name: httpd
+      state: latest
+
+  - name: Start & enable the httpd service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: Open Port 80 for http access in firewall configuration.
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+
+  - name: Reload firewall service to load firewall changes
+    service:
+      name: firewalld
+      state: reloaded        

@@ -1,0 +1,13 @@
+---
+- name: Copying Local files to the Remote Host using Ansible # Description of the playbook
+  hosts: all # Where you want to execute this playbook
+  become: true
+
+    tasks: 
+      - name: Copying Files
+        copy:
+          src: /etc/passwd      # source file to copy
+          dest: /etc/passwd     # destination location of the file
+          owner: root # Username of owner of the file
+          group: root # Group ownership of the file
+          mode: 0664 # permisions of the file

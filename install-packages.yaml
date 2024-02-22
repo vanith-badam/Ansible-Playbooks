@@ -1,0 +1,27 @@
+---
+- name: Installing Latest Version of Required Packages on Remote Server
+  hosts: all
+
+    tasks:
+    - name: Installing Packages
+      yum:
+        name: "{{ item }}"
+        state: latest
+      loop: 
+        - epel-release
+        - httpd
+        - firewalld
+        - tomcat
+        - openssh
+        - curl
+        - wget
+        - vim 
+        - telnet
+        - nano
+        - kompare
+        - tigervnc-server
+        - git 
+        - vsftpd
+        - i3
+        - tree
+        - nedit

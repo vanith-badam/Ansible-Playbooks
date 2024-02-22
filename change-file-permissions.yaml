@@ -1,0 +1,9 @@
+---
+- name: Change File Permissions
+  hosts: all
+
+  tasks: 
+    - name: File Permissions
+      file:
+        path: /home/vanith/bash-script
+        mode: a+x
