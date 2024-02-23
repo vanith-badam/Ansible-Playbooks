@@ -1,0 +1,12 @@
+---
+- name: Downloading files from the internet
+  hosts: localhost
+        
+  tasks:
+    - name: Downloading RedHat Documention file
+      get_url:
+        url: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/pdf/configuring_basic_system_settings/red_hat_enterprise_linux-8-configuring_basic_system_settings-en-us.pdf
+        dest: /home/vanith/Downloads
+        mode: 0777
+        owner: vanith
+        group: vanith
