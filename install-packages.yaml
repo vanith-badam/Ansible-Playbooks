@@ -1,6 +1,6 @@
 ---
 - name: Installing Latest Version of Required Packages on Remote Server
-  hosts: all
+  hosts: localhost
 
   tasks:
   - name: Installing Packages

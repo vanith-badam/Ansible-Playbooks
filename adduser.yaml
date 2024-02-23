@@ -1,0 +1,18 @@
+---
+- name: Creating the new user account 
+  hosts: localhost
+  
+  tasks:
+    - name: Create User
+      user:
+        name: jimmy
+        uid: 23456
+        group: wheel
+        comment: "jimmy is dev-eng"
+        append: yes
+        home: /home/jimmy
+        shell: /bin/bash
+        password: "{{ password|password_hash('sha512') }}"
+
+
+# use/add variable "-e password=jimmy@1234" while running the playbook to update password for jimmy as jimmy@1234

@@ -1,0 +1,15 @@
+---
+- name: Scheduling a Cronjob using Ansible on remote hosts
+  hosts: localhost
+
+  tasks: 
+    - name: Creating a Cronjob
+      cron:
+        name: Running configuration script
+        minute: "0"
+        hour: "10"
+        day:  "15"
+        month: "*"
+        weekday: "1"
+        user: "root"
+        job: /home/vanith/files/configuration.sh

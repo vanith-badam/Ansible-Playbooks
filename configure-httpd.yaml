@@ -1,6 +1,6 @@
 ---
 - name: Install and configure HTTPS 
-  hosts: all
+  hosts: localhost
 
   tasks:
   - name: Install latest version of httpd
